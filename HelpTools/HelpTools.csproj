@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseTools.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="HelpFile.cs" />
     <Compile Include="manual.cs" />
