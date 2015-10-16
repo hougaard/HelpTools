@@ -1,0 +1,892 @@
+OBJECT Table 71000 NAV Objects Help Text
+{
+  OBJECT-PROPERTIES
+  {
+    Date=03-07-15;
+    Time=15:37:36;
+    Modified=Yes;
+    Version List=HELP;
+  }
+  PROPERTIES
+  {
+  }
+  FIELDS
+  {
+    { 1   ;   ;Parent Object Type  ;Option        ;CaptionML=ENU=Parent Object Type;
+                                                   OptionCaptionML=ENU=" ,Table,,Report,,Codeunit,XMLport,MenuSuite,Page,Query,System,FieldNumber";
+                                                   OptionString=[ ,Table,,Report,,Codeunit,XMLport,MenuSuite,Page,Query,System,FieldNumber] }
+    { 2   ;   ;Parent Object ID    ;Integer       ;TableRelation=Object.ID WHERE (Type=FIELD(Object Type));
+                                                   ValidateTableRelation=No;
+                                                   TestTableRelation=No;
+                                                   CaptionML=ENU=Parent Object ID }
+    { 3   ;   ;Object Type         ;Option        ;CaptionML=ENU=Object Type;
+                                                   OptionCaptionML=ENU=TableData,Table,,Report,,Codeunit,XMLport,MenuSuite,Page,Query,System,FieldNumber;
+                                                   OptionString=TableData,Table,,Report,,Codeunit,XMLport,MenuSuite,Page,Query,System,FieldNumber }
+    { 6   ;   ;Object ID           ;Integer       ;TableRelation=Object.ID WHERE (Type=FIELD(Object Type));
+                                                   ValidateTableRelation=No;
+                                                   TestTableRelation=No;
+                                                   CaptionML=ENU=Object ID }
+    { 7   ;   ;Language            ;Code10         }
+    { 8   ;   ;Version             ;Text50         }
+    { 9   ;   ;Caption             ;Text250        }
+    { 10  ;   ;Description         ;BLOB           }
+    { 11  ;   ;Additional Info     ;BLOB           }
+    { 12  ;   ;Tasks               ;BLOB           }
+    { 100 ;   ;Orphaned Help       ;Boolean        }
+  }
+  KEYS
+  {
+    {    ;Parent Object Type,Parent Object ID,Object Type,Object ID,Language,Version;
+                                                   Clustered=Yes }
+  }
+  FIELDGROUPS
+  {
+  }
+  CODE
+  {
+
+    BEGIN
+    END.
+  }
+}
+
+OBJECT Table 71001 Help Article
+{
+  OBJECT-PROPERTIES
+  {
+    Date=13-11-14;
+    Time=12:43:02;
+    Modified=Yes;
+    Version List=HELP;
+  }
+  PROPERTIES
+  {
+  }
+  FIELDS
+  {
+    { 1   ;   ;Keyword             ;Text30         }
+    { 2   ;   ;Title               ;Text250        }
+    { 3   ;   ;Article             ;BLOB           }
+    { 5   ;   ;Language            ;Code10         }
+    { 6   ;   ;Version             ;Text50         }
+  }
+  KEYS
+  {
+    {    ;Keyword,Language                        ;Clustered=Yes }
+  }
+  FIELDGROUPS
+  {
+  }
+  CODE
+  {
+
+    BEGIN
+    END.
+  }
+}
+
+OBJECT Table 71003 Help Setup
+{
+  OBJECT-PROPERTIES
+  {
+    Date=16-10-15;
+    Time=10:24:21;
+    Modified=Yes;
+    Version List=HELP;
+  }
+  PROPERTIES
+  {
+  }
+  FIELDS
+  {
+    { 1   ;   ;KEY                 ;Code10         }
+    { 2   ;   ;MarkdownPad EXE     ;Text250        }
+    { 3   ;   ;Structure.XML       ;Text250        }
+    { 4   ;   ;Objectrange         ;Text100        }
+  }
+  KEYS
+  {
+    {    ;KEY                                     ;Clustered=Yes }
+  }
+  FIELDGROUPS
+  {
+  }
+  CODE
+  {
+
+    BEGIN
+    END.
+  }
+}
+
+OBJECT XMLport 71000 Help Content
+{
+  OBJECT-PROPERTIES
+  {
+    Date=01-10-15;
+    Time=19:47:03;
+    Modified=Yes;
+    Version List=HELP;
+  }
+  PROPERTIES
+  {
+    Encoding=UTF-8;
+    PreserveWhiteSpace=Yes;
+  }
+  ELEMENTS
+  {
+    { [{F81C8184-49D1-408D-B121-F26B4442F830}];  ;Help                ;Element ;Text     }
+
+    { [{CD2CBC5A-B464-4892-A8ED-1086B9863DA5}];1 ;Contents            ;Element ;Text     }
+
+    { [{BA110FDE-CE98-496A-B23E-A3305B7BBE03}];2 ;Content             ;Element ;Table   ;
+                                                  SourceTable=Table71000;
+                                                  AutoReplace=Yes;
+                                                  Export::OnAfterGetRecord=BEGIN
+                                                                             "NAV Objects Help Text".CALCFIELDS(Description,"Additional Info",Tasks);
+                                                                             IF NOT ("NAV Objects Help Text".Description.HASVALUE OR
+                                                                                "NAV Objects Help Text"."Additional Info".HASVALUE OR
+                                                                                "NAV Objects Help Text".Tasks.HASVALUE) THEN
+                                                                               currXMLport.SKIP;
+                                                                           END;
+                                                                            }
+
+    { [{E0491B5A-5703-4D49-BC9C-3D8D22AA775F}];3 ;ParentType          ;Element ;Field   ;
+                                                  DataType=Option;
+                                                  SourceField=NAV Objects Help Text::Parent Object Type }
+
+    { [{54CA74AA-F268-4B0E-8C19-D3EDA6ECC929}];3 ;ParentID            ;Element ;Field   ;
+                                                  DataType=Integer;
+                                                  SourceField=NAV Objects Help Text::Parent Object ID }
+
+    { [{8A7168E0-E3F6-43D2-9ED7-E6F6D38017A6}];3 ;Type                ;Element ;Field   ;
+                                                  DataType=Option;
+                                                  SourceField=NAV Objects Help Text::Object Type }
+
+    { [{A578295C-FEF5-4C1B-8ED2-A2BC19FF244F}];3 ;ID                  ;Element ;Field   ;
+                                                  DataType=Integer;
+                                                  SourceField=NAV Objects Help Text::Object ID }
+
+    { [{3F4FBA60-D99C-44DE-A724-AF090C56B630}];3 ;Language            ;Element ;Field   ;
+                                                  DataType=Code;
+                                                  SourceField=NAV Objects Help Text::Language }
+
+    { [{48629655-605A-491D-9A41-1A60D58BF097}];3 ;Version             ;Element ;Field   ;
+                                                  DataType=Text;
+                                                  SourceField=NAV Objects Help Text::Version }
+
+    { [{E3AED9E6-FE20-4B09-A145-3CFE3E82F393}];3 ;Caption             ;Element ;Field   ;
+                                                  DataType=Text;
+                                                  SourceField=NAV Objects Help Text::Caption }
+
+    { [{F97EB27A-6AAA-4B13-9265-2505349419C9}];3 ;Description         ;Element ;Text    ;
+                                                  TextType=BigText;
+                                                  DataType=BLOB;
+                                                  Import::OnAfterAssignVariable=VAR
+                                                                                  OutS@1000 : OutStream;
+                                                                                  streamWriter@1002 : DotNet "'mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.IO.StreamWriter";
+                                                                                  Encoding@1001 : DotNet "'mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.Text.Encoding";
+                                                                                BEGIN
+                                                                                  IF Description.LENGTH > 0 THEN BEGIN
+                                                                                    "NAV Objects Help Text".Description.CREATEOUTSTREAM(OutS);
+                                                                                    streamWriter := streamWriter.StreamWriter(OutS,Encoding.UTF8);
+                                                                                    streamWriter.Write(Description);
+                                                                                  END;
+                                                                                END;
+
+                                                  Export::OnBeforePassVariable=VAR
+                                                                                 InS@1000 : InStream;
+                                                                                 streamReader@1003 : DotNet "'mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.IO.StreamReader";
+                                                                                 Encoding@1002 : DotNet "'mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.Text.Encoding";
+                                                                                 stream@1001 : Text;
+                                                                               BEGIN
+                                                                                 CLEAR(Description);
+                                                                                 "NAV Objects Help Text".CALCFIELDS(Description);
+
+                                                                                 IF "NAV Objects Help Text".Description.HASVALUE THEN BEGIN
+                                                                                   "NAV Objects Help Text".Description.CREATEINSTREAM(InS);
+                                                                                   streamReader := streamReader.StreamReader(InS,Encoding.UTF8,TRUE);
+                                                                                   stream := streamReader.ReadToEnd();
+
+                                                                                   Description.ADDTEXT(stream);
+                                                                                 END;
+                                                                               END;
+                                                                                }
+
+    { [{19FB6D69-FA4B-4D88-82DC-CEF70E163674}];3 ;AdditionalInfo      ;Element ;Text    ;
+                                                  TextType=BigText;
+                                                  DataType=BLOB;
+                                                  Import::OnAfterAssignVariable=VAR
+                                                                                  OutS@1002 : OutStream;
+                                                                                  streamWriter@1001 : DotNet "'mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.IO.StreamWriter";
+                                                                                  Encoding@1000 : DotNet "'mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.Text.Encoding";
+                                                                                BEGIN
+                                                                                  IF AdditionalInfo.LENGTH > 0 THEN BEGIN
+                                                                                    "NAV Objects Help Text"."Additional Info".CREATEOUTSTREAM(OutS);
+                                                                                    streamWriter := streamWriter.StreamWriter(OutS,Encoding.UTF8);
+                                                                                    streamWriter.Write(AdditionalInfo);
+                                                                                  END;
+                                                                                END;
+
+                                                  Export::OnBeforePassVariable=VAR
+                                                                                 InS@1003 : InStream;
+                                                                                 streamReader@1002 : DotNet "'mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.IO.StreamReader";
+                                                                                 Encoding@1001 : DotNet "'mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.Text.Encoding";
+                                                                                 stream@1000 : Text;
+                                                                               BEGIN
+                                                                                 CLEAR(AdditionalInfo);
+                                                                                 "NAV Objects Help Text".CALCFIELDS("Additional Info");
+
+                                                                                 IF "NAV Objects Help Text"."Additional Info".HASVALUE THEN BEGIN
+                                                                                   "NAV Objects Help Text"."Additional Info".CREATEINSTREAM(InS);
+                                                                                   streamReader := streamReader.StreamReader(InS,Encoding.UTF8,TRUE);
+                                                                                   stream := streamReader.ReadToEnd();
+                                                                                   AdditionalInfo.ADDTEXT(stream);
+                                                                                 END;
+                                                                               END;
+                                                                                }
+
+    { [{9A2EE5F0-1B26-46BA-976A-B1ADF745BA04}];3 ;Tasks               ;Element ;Text    ;
+                                                  TextType=BigText;
+                                                  DataType=BLOB;
+                                                  Import::OnAfterAssignVariable=VAR
+                                                                                  OutS@1002 : OutStream;
+                                                                                  streamWriter@1001 : DotNet "'mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.IO.StreamWriter";
+                                                                                  Encoding@1000 : DotNet "'mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.Text.Encoding";
+                                                                                BEGIN
+                                                                                  IF Tasks.LENGTH > 0 THEN BEGIN
+                                                                                    "NAV Objects Help Text".Tasks.CREATEOUTSTREAM(OutS);
+                                                                                    streamWriter := streamWriter.StreamWriter(OutS,Encoding.UTF8);
+                                                                                    streamWriter.Write(Tasks);
+                                                                                  END;
+                                                                                END;
+
+                                                  Export::OnBeforePassVariable=VAR
+                                                                                 InS@1003 : InStream;
+                                                                                 streamReader@1002 : DotNet "'mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.IO.StreamReader";
+                                                                                 Encoding@1001 : DotNet "'mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.Text.Encoding";
+                                                                                 stream@1000 : Text;
+                                                                               BEGIN
+                                                                                 CLEAR(Tasks);
+                                                                                 "NAV Objects Help Text".CALCFIELDS(Tasks);
+
+                                                                                 IF "NAV Objects Help Text".Tasks.HASVALUE THEN BEGIN
+                                                                                   "NAV Objects Help Text".Tasks.CREATEINSTREAM(InS);
+                                                                                   streamReader := streamReader.StreamReader(InS,Encoding.UTF8,TRUE);
+                                                                                   stream := streamReader.ReadToEnd();
+                                                                                   Tasks.ADDTEXT(stream);
+                                                                                 END;
+                                                                               END;
+                                                                                }
+
+    { [{99A020DB-7667-47EE-BEC4-B3C86A564CD1}];1 ;Articles            ;Element ;Text     }
+
+    { [{84F4ECEE-459A-407D-B0F7-95223287B0B9}];2 ;Article             ;Element ;Table   ;
+                                                  SourceTable=Table71001;
+                                                  AutoReplace=Yes }
+
+    { [{10DBF704-C900-4A3A-AE73-9C8B4F90B346}];3 ;Keyword             ;Element ;Field   ;
+                                                  DataType=Text;
+                                                  SourceField=Help Keyword::Keyword }
+
+    { [{240C0BDC-F7F5-419D-8056-22921593ACDC}];3 ;Title               ;Element ;Field   ;
+                                                  DataType=Text;
+                                                  SourceField=Help Keyword::Title }
+
+    { [{6B6A6882-9B13-4FF4-BCD7-3B6497B8FF07}];3 ;Language            ;Element ;Field   ;
+                                                  DataType=Code;
+                                                  SourceField=Help Keyword::Language }
+
+    { [{F33E8D68-A640-4B69-81B0-1F1D3F3B448B}];3 ;Version             ;Element ;Field   ;
+                                                  DataType=Text;
+                                                  SourceField=Help Keyword::Version }
+
+    { [{D5596741-27DC-4F42-862F-1A756C74F071}];3 ;ArticleText         ;Element ;Text    ;
+                                                  TextType=BigText;
+                                                  Import::OnAfterAssignVariable=VAR
+                                                                                  OutS@1002 : OutStream;
+                                                                                  streamWriter@1001 : DotNet "'mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.IO.StreamWriter";
+                                                                                  Encoding@1000 : DotNet "'mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.Text.Encoding";
+                                                                                BEGIN
+                                                                                  IF ArticleText.LENGTH > 0 THEN BEGIN
+                                                                                    "Help Article".Article.CREATEOUTSTREAM(OutS);
+                                                                                    streamWriter := streamWriter.StreamWriter(OutS,Encoding.UTF8);
+                                                                                    streamWriter.Write(ArticleText);
+                                                                                  END;
+                                                                                END;
+
+                                                  Export::OnBeforePassVariable=VAR
+                                                                                 InS@1003 : InStream;
+                                                                                 streamReader@1002 : DotNet "'mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.IO.StreamReader";
+                                                                                 Encoding@1001 : DotNet "'mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.Text.Encoding";
+                                                                                 stream@1000 : Text;
+                                                                               BEGIN
+                                                                                 CLEAR(ArticleText);
+                                                                                 "Help Article".CALCFIELDS(Article);
+
+                                                                                 IF "Help Article".Article.HASVALUE THEN BEGIN
+                                                                                   "Help Article".Article.CREATEINSTREAM(InS);
+                                                                                   streamReader := streamReader.StreamReader(InS,Encoding.UTF8,TRUE);
+                                                                                   stream := streamReader.ReadToEnd();
+                                                                                   ArticleText.ADDTEXT(stream);
+                                                                                 END;
+                                                                               END;
+                                                                                }
+
+  }
+  EVENTS
+  {
+  }
+  REQUESTPAGE
+  {
+    PROPERTIES
+    {
+    }
+    CONTROLS
+    {
+    }
+  }
+  CODE
+  {
+
+    BEGIN
+    END.
+  }
+}
+
+OBJECT MenuSuite 1060 Help Menu
+{
+  OBJECT-PROPERTIES
+  {
+    Date=01-10-15;
+    Time=19:51:37;
+    Modified=Yes;
+    Version List=HELP;
+  }
+  PROPERTIES
+  {
+  }
+  MENUNODES
+  {
+    {                ;[{271C2274-2D5D-465B-A84B-1714B47BE305}] ;NextNodeID=[{D88C404E-0F60-44BE-839A-5BFF09FF8B40}] }
+    {                ;[{19A352FE-D90D-424E-B85F-CF3B8E98CF0E}] ;NextNodeID=[{316A4EA9-23DD-48C2-ACF3-560B6A947D99}] }
+    { Menu           ;[{316A4EA9-23DD-48C2-ACF3-560B6A947D99}] ;Name=Help;
+                                                                CaptionML=ENU=Help;
+                                                                MemberOfMenu=[{316A4EA9-23DD-48C2-ACF3-560B6A947D99}];
+                                                                ParentNodeID=[{00000000-0000-0000-0000-000000000000}];
+                                                                Image=0;
+                                                                IsShortcut=No;
+                                                                Visible=Yes;
+                                                                Enabled=Yes;
+                                                                NextNodeID=[{00000000-0000-0000-0000-000000000000}];
+                                                                FirstChild=[{C3BC6F14-DC6C-4D97-8C32-4442B441901E}] }
+    { MenuItem       ;[{C76EE9E5-748A-4B7B-AE34-119EBE1A5F70}] ;Name=Help Keyword List;
+                                                                CaptionML=[DAN=Help Keyword List;
+                                                                           ENU=Articles];
+                                                                MemberOfMenu=[{316A4EA9-23DD-48C2-ACF3-560B6A947D99}];
+                                                                RunObjectType=Page;
+                                                                RunObjectID=71000;
+                                                                ParentNodeID=[{C3BC6F14-DC6C-4D97-8C32-4442B441901E}];
+                                                                Visible=Yes;
+                                                                NextNodeID=[{7802B299-5A2F-4B18-B67F-5C6B2FE09250}];
+                                                                DepartmentCategory=Administration }
+    { MenuItem       ;[{7802B299-5A2F-4B18-B67F-5C6B2FE09250}] ;Name=Context Help List;
+                                                                CaptionML=[DAN=Context Help List;
+                                                                           ENU=Objects and Fields help];
+                                                                MemberOfMenu=[{316A4EA9-23DD-48C2-ACF3-560B6A947D99}];
+                                                                RunObjectType=Page;
+                                                                RunObjectID=71001;
+                                                                ParentNodeID=[{C3BC6F14-DC6C-4D97-8C32-4442B441901E}];
+                                                                Visible=Yes;
+                                                                NextNodeID=[{3C22ACD6-DC68-4ED8-91CA-8E32961E26E2}];
+                                                                DepartmentCategory=Administration }
+    { MenuItem       ;[{3C22ACD6-DC68-4ED8-91CA-8E32961E26E2}] ;Name=Import/Export Help;
+                                                                CaptionML=[DAN=Import/Export Help;
+                                                                           ENU=Import/Export Help];
+                                                                MemberOfMenu=[{316A4EA9-23DD-48C2-ACF3-560B6A947D99}];
+                                                                RunObjectType=XMLport;
+                                                                RunObjectID=71000;
+                                                                ParentNodeID=[{C3BC6F14-DC6C-4D97-8C32-4442B441901E}];
+                                                                Visible=Yes;
+                                                                NextNodeID=[{00000000-0000-0000-0000-000000000000}];
+                                                                DepartmentCategory=Administration }
+    { MenuGroup      ;[{C3BC6F14-DC6C-4D97-8C32-4442B441901E}] ;Name=Help;
+                                                                CaptionML=ENU=Help;
+                                                                MemberOfMenu=[{316A4EA9-23DD-48C2-ACF3-560B6A947D99}];
+                                                                ParentNodeID=[{316A4EA9-23DD-48C2-ACF3-560B6A947D99}];
+                                                                Visible=Yes;
+                                                                NextNodeID=[{00000000-0000-0000-0000-000000000000}];
+                                                                FirstChild=[{C76EE9E5-748A-4B7B-AE34-119EBE1A5F70}] }
+  }
+}
+OBJECT Page 71000 Help Article List
+{
+  OBJECT-PROPERTIES
+  {
+    Date=16-10-15;
+    Time=10:25:48;
+    Modified=Yes;
+    Version List=HELP;
+  }
+  PROPERTIES
+  {
+    SourceTable=Table71001;
+    PageType=List;
+    ActionList=ACTIONS
+    {
+      { 5       ;    ;ActionContainer;
+                      ActionContainerType=ActionItems }
+      { 6       ;1   ;Action    ;
+                      Name=Edt Article;
+                      Promoted=Yes;
+                      PromotedIsBig=Yes;
+                      Image=Text;
+                      PromotedCategory=Process;
+                      OnAction=BEGIN
+                                 EditBlob();
+                               END;
+                                }
+      { 9       ;1   ;Action    ;
+                      Name=Backup/Restore;
+                      RunObject=XMLport 71000;
+                      Promoted=Yes;
+                      PromotedIsBig=Yes;
+                      Image=ImportExport;
+                      PromotedCategory=Process }
+    }
+  }
+  CONTROLS
+  {
+    { 1   ;0   ;Container ;
+                ContainerType=ContentArea }
+
+    { 2   ;1   ;Group     ;
+                Name=Group;
+                GroupType=Repeater }
+
+    { 3   ;2   ;Field     ;
+                SourceExpr=Keyword }
+
+    { 8   ;2   ;Field     ;
+                SourceExpr=Language }
+
+    { 4   ;2   ;Field     ;
+                SourceExpr=Title }
+
+    { 7   ;2   ;Field     ;
+                CaptionML=[DAN=Filled out;
+                           ENU=Filled out];
+                SourceExpr=HasValue();
+                Style=Strong;
+                StyleExpr=TRUE }
+
+  }
+  CODE
+  {
+
+    PROCEDURE HasValue@1() : Text;
+    BEGIN
+      CALCFIELDS(Article);
+      IF Article.HASVALUE THEN
+        EXIT('Yes');
+    END;
+
+    PROCEDURE EditBlob@3();
+    VAR
+      InS@1004 : InStream;
+      OutS@1003 : OutStream;
+      Process@1002 : DotNet "'System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.Diagnostics.Process" RUNONCLIENT;
+      TempFileName@1001 : Text;
+      Setup@1000 : Record 71003;
+    BEGIN
+      TempFileName := ExportAsTemp(Rec);
+      Setup.GET;
+      Process := Process.Start(Setup."MarkdownPad EXE",'"'+TempFileName+'"');
+      //Process := Process.Start('notepad.exe',                                            '"'+TempFileName+'"');
+
+      Process.WaitForExit();
+
+      IF CONFIRM('Save Result',TRUE) THEN BEGIN
+        UPLOADINTOSTREAM('','<TEMP>','',TempFileName,InS);
+        Article.CREATEOUTSTREAM(OutS);
+        COPYSTREAM(OutS,InS);
+        Rec.MODIFY(TRUE);
+      END;
+    END;
+
+    PROCEDURE ExportAsTemp@1160530012(VAR HelpRec@1160530000 : Record 71001) : Text;
+    VAR
+      ResultStream@1160530002 : InStream;
+      MagicPath@1160530003 : Text;
+    BEGIN
+       HelpRec.CALCFIELDS(Article);
+       HelpRec.Article.CREATEINSTREAM(ResultStream);
+
+      IF DOWNLOADFROMSTREAM(ResultStream,'','<TEMP>','',MagicPath) THEN
+        EXIT(MagicPath)
+      ELSE
+        ERROR('Download failed');
+    END;
+
+    BEGIN
+    END.
+  }
+}
+
+OBJECT Page 71001 Help NAV Objects List
+{
+  OBJECT-PROPERTIES
+  {
+    Date=16-10-15;
+    Time=10:27:17;
+    Modified=Yes;
+    Version List=HELP;
+  }
+  PROPERTIES
+  {
+    SourceTable=Table71000;
+    PageType=List;
+    ActionList=ACTIONS
+    {
+      { 7       ;    ;ActionContainer;
+                      ActionContainerType=ActionItems }
+      { 8       ;1   ;Action    ;
+                      Name=Edit Description;
+                      Promoted=Yes;
+                      PromotedIsBig=Yes;
+                      Image=Text;
+                      PromotedCategory=Process;
+                      OnAction=BEGIN
+                                 EditBlob(1);
+                               END;
+                                }
+      { 15      ;1   ;Action    ;
+                      Name=Edit Additional Info;
+                      Promoted=Yes;
+                      Visible=false;
+                      PromotedIsBig=Yes;
+                      Image=Text;
+                      PromotedCategory=Process;
+                      OnAction=VAR
+                                 InS@1006 : InStream;
+                                 StreamReader@1005 : DotNet "'mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.IO.StreamReader";
+                                 HTML@1004 : Text;
+                                 Txt@1003 : Text;
+                                 Txt2@1002 : Text;
+                                 OutS@1001 : OutStream;
+                                 StreamWriter@1000 : DotNet "'mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.IO.StreamWriter";
+                               BEGIN
+                                 EditBlob(2);
+                               END;
+                                }
+      { 14      ;1   ;Action    ;
+                      Name=Edit Tasks;
+                      Promoted=Yes;
+                      Visible=false;
+                      PromotedIsBig=Yes;
+                      Image=Text;
+                      PromotedCategory=Process;
+                      OnAction=VAR
+                                 InS@1006 : InStream;
+                                 StreamReader@1005 : DotNet "'mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.IO.StreamReader";
+                                 HTML@1004 : Text;
+                                 Txt@1003 : Text;
+                                 Txt2@1002 : Text;
+                                 OutS@1001 : OutStream;
+                                 StreamWriter@1000 : DotNet "'mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.IO.StreamWriter";
+                               BEGIN
+                                 EditBlob(3);
+                               END;
+                                }
+      { 9       ;1   ;Action    ;
+                      Name=Generate Missing Objects;
+                      Image=GetLines;
+                      OnAction=VAR
+                                 NewRec1@1000 : Record 71000;
+                                 NewRec2@1001 : Record 71000;
+                                 ObjectTable@1002 : Record 2000000001;
+                                 Fields@1003 : Record 2000000041;
+                                 LanRec@1004 : Record 8;
+                                 CU1@1005 : Codeunit 1;
+                                 Setup@1006 : Record 71003;
+                               BEGIN
+                                 Setup.GET;
+                                 ObjectTable.SETFILTER(ID,Setup.Objectrange);
+                                 ObjectTable.SETFILTER(Type,'<>%1',ObjectTable.Type::TableData);
+                                 IF ObjectTable.FINDFIRST THEN
+                                   REPEAT
+                                     IF NOT NewRec1.GET(0,0,
+                                                        ObjectTable.Type,ObjectTable.ID,
+                                                        LanRec.GetUserLanguage(),
+                                                        ObjectTable."Version List") THEN BEGIN
+                                       NewRec1.INIT;
+                                       NewRec1."Parent Object Type" := 0;
+                                       NewRec1."Parent Object ID" := 0;
+                                       NewRec1."Object Type" := ObjectTable.Type;
+                                       NewRec1."Object ID" := ObjectTable.ID;
+                                       NewRec1.Language := LanRec.GetUserLanguage();
+                                       NewRec1.Version := ObjectTable."Version List";
+                                       ObjectTable.CALCFIELDS(Caption);
+                                       NewRec1.Caption := ObjectTable.Caption;
+                                       NewRec1.INSERT;
+                                     END;
+                                     IF ObjectTable.Type = ObjectTable.Type::Table THEN BEGIN
+                                       Fields.SETRANGE(TableNo,ObjectTable.ID);
+                                       IF Fields.FINDFIRST THEN
+                                         REPEAT
+                                           IF NOT NewRec1.GET(ObjectTable.Type::Table,ObjectTable.ID,
+                                                              ObjectTable.Type::FieldNumber,Fields."No.",
+                                                              LanRec.GetUserLanguage(),
+                                                              ObjectTable."Version List") THEN BEGIN
+                                             NewRec1.INIT;
+                                             NewRec1."Parent Object Type" := ObjectTable.Type::Table;
+                                             NewRec1."Parent Object ID" := ObjectTable.ID;
+                                             NewRec1."Object Type" := ObjectTable.Type::FieldNumber;
+                                             NewRec1."Object ID" := Fields."No.";
+                                             NewRec1.Language := LanRec.GetUserLanguage();
+                                             NewRec1.Version := ObjectTable."Version List";
+                                             NewRec1.Caption := Fields."Field Caption";
+                                             NewRec1.INSERT;
+                                           END;
+
+                                         UNTIL Fields.NEXT = 0;
+                                     END;
+                                   UNTIL ObjectTable.NEXT = 0;
+                               END;
+                                }
+      { 13      ;1   ;Action    ;
+                      Name=[Find Orphaned Help ];
+                      OnAction=VAR
+                                 NewRec1@1005 : Record 71000;
+                                 NewRec2@1004 : Record 71000;
+                                 ObjectTable@1003 : Record 2000000001;
+                                 Fields@1002 : Record 2000000041;
+                                 LanRec@1001 : Record 8;
+                                 CU1@1000 : Codeunit 1;
+                               BEGIN
+                                 IF NewRec1.FINDFIRST THEN
+                                   REPEAT
+                                     NewRec1."Orphaned Help" := FALSE;
+                                     IF NewRec1."Object Type" <> NewRec1."Object Type"::FieldNumber THEN BEGIN
+                                       IF NOT ObjectTable.GET(NewRec1."Object Type",'',NewRec1."Object ID") THEN
+                                         NewRec1."Orphaned Help" := TRUE;
+                                     END ELSE BEGIN
+                                       IF NOT Fields.GET(NewRec1."Parent Object ID",NewRec1."Object ID") THEN
+                                         NewRec1."Orphaned Help" := TRUE;
+                                     END;
+                                     NewRec1.MODIFY;
+                                   UNTIL NewRec1.NEXT = 0;
+                               END;
+                                }
+      { 17      ;1   ;Action    ;
+                      Name=Backup/Restore;
+                      RunObject=XMLport 71000 }
+      { 19      ;1   ;Action    ;
+                      Name=Reversion;
+                      CaptionML=ENU=Move help to newest object version;
+                      OnAction=VAR
+                                 NewRec1@1005 : Record 71000;
+                                 NewRec2@1004 : Record 71000;
+                                 NewRec3@1007 : Record 71000;
+                                 NewRec4@1008 : Record 71000;
+                                 ObjectTable@1003 : Record 2000000001;
+                                 RenamedObject@1006 : Record 2000000001;
+                                 Fields@1002 : Record 2000000041;
+                                 LanRec@1001 : Record 8;
+                                 CU1@1000 : Codeunit 1;
+                               BEGIN
+                                 IF CONFIRM('Move help to newest version of objects') THEN BEGIN
+                                   IF NewRec1.FINDFIRST THEN
+                                     REPEAT
+                                       IF NewRec1."Object Type" <> NewRec1."Object Type"::FieldNumber THEN BEGIN
+                                          IF ObjectTable.GET(NewRec1."Object Type",'',NewRec1."Object ID") THEN
+                                            IF ObjectTable."Version List" <> NewRec1.Version THEN BEGIN
+                                              NewRec1.RENAME(NewRec1."Parent Object Type",
+                                                             NewRec1."Parent Object ID",
+                                                             NewRec1."Object Type",
+                                                             NewRec1."Object ID",
+                                                             NewRec1.Language,
+                                                             ObjectTable."Version List");
+                                              IF ObjectTable.Type = NewRec1."Object Type"::Table THEN BEGIN
+                                                NewRec2.SETRANGE("Parent Object Type",NewRec1."Object Type");
+                                                NewRec2.SETRANGE("Parent Object ID",NewRec1."Object ID");
+                                                IF NewRec2.FINDSET THEN
+                                                  REPEAT
+                                                    NewRec2.RENAME(NewRec2."Parent Object Type",
+                                                                   NewRec2."Parent Object ID",
+                                                                   NewRec2."Object Type",
+                                                                   NewRec2."Object ID",
+                                                                   NewRec2.Language,
+                                                                   ObjectTable."Version List");
+                                                  UNTIL NewRec2.NEXT = 0;
+                                              END;
+                                            END;
+                                       END;
+                                     UNTIL NewRec1.NEXT = 0;
+                                 END;
+                               END;
+                                }
+      { 20      ;1   ;Action    ;
+                      Name=updatecaptions;
+                      CaptionML=ENU=Update Captions;
+                      OnAction=VAR
+                                 NewRec1@1008 : Record 71000;
+                                 NewRec2@1007 : Record 71000;
+                                 NewRec3@1006 : Record 71000;
+                                 NewRec4@1005 : Record 71000;
+                                 ObjectTable@1004 : Record 2000000001;
+                                 RenamedObject@1003 : Record 2000000001;
+                                 Fields@1002 : Record 2000000041;
+                                 LanRec@1001 : Record 8;
+                                 CU1@1000 : Codeunit 1;
+                               BEGIN
+                                 IF CONFIRM('Update Captions to current values?') THEN BEGIN
+                                   IF NewRec1.FINDFIRST THEN
+                                     REPEAT
+                                       IF NewRec1."Object Type" <> NewRec1."Object Type"::FieldNumber THEN BEGIN
+                                          IF ObjectTable.GET(NewRec1."Object Type",'',NewRec1."Object ID") THEN BEGIN
+                                            ObjectTable.CALCFIELDS(Caption);
+                                            NewRec1.Caption := ObjectTable.Caption;
+                                            NewRec1.MODIFY;
+                                            IF ObjectTable.Type = NewRec1."Object Type"::Table THEN BEGIN
+                                              NewRec2.SETRANGE("Parent Object Type",NewRec1."Object Type");
+                                              NewRec2.SETRANGE("Parent Object ID",NewRec1."Object ID");
+                                              IF NewRec2.FINDSET THEN
+                                                REPEAT
+                                                   Fields.SETRANGE(TableNo,NewRec1."Object ID");
+                                                   Fields.SETRANGE("No.",NewRec2."Object ID");
+                                                   IF Fields.FINDFIRST THEN BEGIN
+                                                     NewRec2.Caption := Fields."Field Caption";
+                                                     NewRec2.MODIFY;
+                                                   END;
+                                                UNTIL NewRec2.NEXT = 0;
+                                              END;
+                                            END;
+                                       END;
+                                     UNTIL NewRec1.NEXT = 0;
+                                 END;
+                               END;
+                                }
+    }
+  }
+  CONTROLS
+  {
+    { 1   ;0   ;Container ;
+                ContainerType=ContentArea }
+
+    { 2   ;1   ;Group     ;
+                Name=Group;
+                GroupType=Repeater }
+
+    { 3   ;2   ;Field     ;
+                SourceExpr="Parent Object Type" }
+
+    { 4   ;2   ;Field     ;
+                SourceExpr="Parent Object ID" }
+
+    { 5   ;2   ;Field     ;
+                SourceExpr="Object Type" }
+
+    { 6   ;2   ;Field     ;
+                SourceExpr="Object ID" }
+
+    { 11  ;2   ;Field     ;
+                SourceExpr=Language }
+
+    { 12  ;2   ;Field     ;
+                SourceExpr=Version }
+
+    { 16  ;2   ;Field     ;
+                SourceExpr=Caption }
+
+    { 10  ;2   ;Field     ;
+                CaptionML=[DAN=Filled Out;
+                           ENU=Text];
+                SourceExpr=HasValue();
+                Style=Strong;
+                StyleExpr=TRUE }
+
+    { 18  ;2   ;Field     ;
+                SourceExpr="Orphaned Help" }
+
+  }
+  CODE
+  {
+
+    PROCEDURE EditBlob@3(Selection@1000 : Integer);
+    VAR
+      InS@1004 : InStream;
+      OutS@1003 : OutStream;
+      Process@1002 : DotNet "'System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.Diagnostics.Process" RUNONCLIENT;
+      TempFileName@1001 : Text;
+      Setup@1005 : Record 71003;
+    BEGIN
+      TempFileName := ExportAsTemp(Rec,Selection);
+      Setup.GET;
+      Process := Process.Start(Setup."MarkdownPad EXE",'"'+TempFileName+'"');
+
+      Process.WaitForExit();
+
+      IF CONFIRM('Save Result',TRUE) THEN BEGIN
+        UPLOADINTOSTREAM('','<TEMP>','',TempFileName,InS);
+        CASE Selection OF
+          1: Rec.Description.CREATEOUTSTREAM(OutS);
+          2: Rec."Additional Info".CREATEOUTSTREAM(OutS);
+          3: Tasks.CREATEOUTSTREAM(OutS);
+        END;
+        COPYSTREAM(OutS,InS);
+        Rec.MODIFY(TRUE);
+      END;
+    END;
+
+    PROCEDURE HasValue@1() : Text;
+    VAR
+      Has@1000 : Text;
+    BEGIN
+      CALCFIELDS(Description,"Additional Info",Tasks);
+      IF Description.HASVALUE THEN
+        Has += 'Description';
+      IF "Additional Info".HASVALUE THEN BEGIN
+        IF STRLEN(Has) > 0 THEN
+          Has +=', ';
+        Has += 'Additiontal Info';
+      END;
+      IF Tasks.HASVALUE THEN BEGIN
+        IF STRLEN(Has) > 0 THEN
+          Has +=', ';
+        Has += 'Tasks';
+      END;
+      EXIT(Has);
+    END;
+
+    PROCEDURE ExportAsTemp@1160530012(VAR HelpRec@1160530000 : Record 71000;Selection@1000 : Integer) : Text;
+    VAR
+      ResultStream@1160530002 : InStream;
+      MagicPath@1160530003 : Text;
+    BEGIN
+      CASE Selection OF
+        1 : BEGIN
+              HelpRec.CALCFIELDS(Description);
+              HelpRec.Description.CREATEINSTREAM(ResultStream);
+            END;
+        2 : BEGIN
+              HelpRec.CALCFIELDS("Additional Info");
+              HelpRec."Additional Info".CREATEINSTREAM(ResultStream);
+            END;
+        3 : BEGIN
+              HelpRec.CALCFIELDS(Tasks);
+              HelpRec.Tasks.CREATEINSTREAM(ResultStream);
+            END;
+      END;
+
+      IF DOWNLOADFROMSTREAM(ResultStream,'','<TEMP>','',MagicPath) THEN
+        EXIT(MagicPath)
+      ELSE
+        ERROR('Download failed');
+    END;
+
+    BEGIN
+    END.
+  }
+}
+

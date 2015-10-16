@@ -10,6 +10,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpGenerator", "HelpGenerator\HelpGenerator.csproj", "{97AEBE3B-C023-45FC-A776-78567403293F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DynamicsNAV", "DynamicsNAV", "{1A94B9FC-6939-4ACC-8332-93536E61D7DB}"
+	ProjectSection(SolutionItems) = preProject
+		DynamicsNAV\Help Object.fob = DynamicsNAV\Help Object.fob
+		DynamicsNAV\Help Object.txt = DynamicsNAV\Help Object.txt
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DemoData", "DemoData", "{BF09B578-FB94-4DFF-98ED-4EB85FCFBE75}"
 	ProjectSection(SolutionItems) = preProject
