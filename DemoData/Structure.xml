@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Manual>
+  <Info>
+    <Title>Demo Documention</Title>
+    <Author>E Foqus Documentation 2015 (c)</Author>
+    <Preface Type="Article" ID="Introduction" />
+  </Info>
+  <Chapters>
+    <Chapter No="1" Title="The First Chapter">
+      <Preface Type="Article" ID="chapter1intro" />
+      <Topics>
+        <Topic Type="Table" ID="18">
+          <SubTopics>
+            <SubTopic Type="Table" ID="21" />
+          </SubTopics>            
+         </Topic>
+      </Topics>
+    </Chapter>
+    <Chapter No="2" Title="A chapter to far..">
+      <Preface Type="Article" ID="charpter2intro" />
+      <Topics>
+        <Topic Type="Table" ID="24" />
+      </Topics>
+    </Chapter>
+  </Chapters>
+</Manual>

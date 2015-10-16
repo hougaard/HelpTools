@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Template>
+  <ArticleTopicHead>
+    \$2${$1$}
+  </ArticleTopicHead>
+  <ArticleTopicText>$1$</ArticleTopicText>
+  <TableTopicHead>\$2${$1$}
+  </TableTopicHead>
+  <TableTopicIntro>$1$</TableTopicIntro>
+  <TableTopicFields>
+
+    \begin{longtable}{| p{4cm} | p{9cm} |}
+    \hline
+    $1$
+    \end{longtable}
+  </TableTopicFields>
+  <Field>
+    <![CDATA[\index{$3$}{\parbox[t]{4cm}{\vspace{.1\baselineskip}$1$\vspace{.5\baselineskip}
+  }} & 
+  {\parbox[t]{8cm}{\vspace{.1\baselineskip}$2$\vspace{.5\baselineskip}]]></Field>
+  <FieldEntry>$1$ }} \\ \hline
+  </FieldEntry>
+  <ChapterHead>\chapter{$1$}
+  $2$
+ 
+  </ChapterHead>
+  <ChapterBetweenTopics></ChapterBetweenTopics>
+
+  <ManualStart>
+    \documentclass[12pt,a4paper,oneside]{book}
+
+    \usepackage{longtable}
+    \usepackage{fontspec}
+    \usepackage{makeidx}
+    \usepackage{array}
+%    \usepackage{tocloft}
+    \makeindex
+    \setmainfont{Verdana}
+
+    \author{$2$}
+
+%    \setcounter{tocdepth}{3}
+%    \setcounter{secnumdepth}{3}
+
+%    \cftsetindents{section}{0.5in}{0.6in}
+%    \cftsetindents{subsection}{0.5in}{0.6in}
+%    \cftsetindents{subsubsection}{0.5in}{0.6in}
+
+    \begin{document}
+
+    \title{$1$}
+    \maketitle
+
+    \tableofcontents    
+  </ManualStart>
+  <ManualEnd>
+    \clearpage
+    \addcontentsline{toc}{chapter}{Index}
+    \printindex\end{document}
+  </ManualEnd>
+</Template>

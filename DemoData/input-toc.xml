@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Node Name="DynamicsHelp" DisplayName="Help" Page="conGettingStarted.htm">
+  <Node Name="GettingStarted" DisplayName="Getting Started with Microsoft Dynamics NAV 2015" Page="conGettingStarted.htm">
+    <Node Name="AppChanges" DisplayName="Application Changes for Microsoft Dynamics NAV 2015" Page="trbWhatsNewApplicationChangesForNAV.htm" />
+    <Node Name="PlatformChanges" DisplayName="Platform Changes for Microsoft Dynamics NAV 2015" Page="conWhatsNewDeveloperITProChangesForNAV.htm" />
+    <Node Name="LearnAboutRTC" DisplayName="Learn About the RoleTailored Design" Page="conLearnAboutRoletailoredDesign.htm" />
+    <Node Name="BusProcessWalk" DisplayName="Business Process Walkthroughs" Page="oriBusinessProcessWalkthroughs.htm" />
+    <Node Name="ChangeBasicSet" DisplayName="Change Basic Settings" Page="conChangeBasicSettings.htm" />
+    <Node Name="Accessibility" DisplayName="Accessibility for People with Disabilities" Page="conAccessibilityForPeopleWithDisabilities.htm" />
+    <Node Name="AboutHelp" DisplayName="Finding Information in Help" Page="conFindingInformationInHelp.htm" />
+    <Node Name="CopyrightTrademarks" DisplayName="Copyrights and Trademarks" Page="conCopyrightTrademarks.htm" />
+  </Node>
+  <Node Name="WorkingWith" DisplayName="Working with Microsoft Dynamics NAV 2015" Page="conWorkingWithNav.htm">
+    <Node Name="WorkWData" DisplayName="Work with Data" Page="conWorkWithData.htm"></Node>
+    <Node Name="WorkWAppWideFeatures" DisplayName="Work with Application-Wide Features" Page="conWorkWithApplicationWideFeatures.htm"></Node>
+    <Node Name="BusProd" DisplayName="Enhancing Business Productivity" Page="oriEnhancingBusinessProductivityWithNAV.htm"></Node>
+    <Node Name="IntegrWOffice" DisplayName="Integrating with Microsoft Office" Page="oriIntegratingWithOffice.htm"></Node>
+    <Node Name="SendDataToExcel" DisplayName="Sending Data to Microsoft Excel" Page="conSendingDataExcel.htm"></Node>
+    <Node Name="AppDesign" DisplayName="Application Design" Page="conApplicationDesign.htm"></Node>
+  </Node>
+  <Node Name="Setup" DisplayName="Setup and Administration" Page="conSetupAdministration.htm">
+    <Node Name="RapidStart" DisplayName="Set Up a Company With RapidStart Services for Microsoft Dynamics NAV" Page="conSetUpCompanyWithRapidstartServicesForNAV.htm" />
+    <Node Name="AdminInRTC" DisplayName="Administration in the Clients" Page="conAdministrationInRoletailoredClients.htm" />
+    <Node Name="Roles" DisplayName="Roles" Page="conRoles.htm" />
+    <Node Name="customizeUI" DisplayName="Customize the User Interface" Page="conSetUpUsersConfigureUserInterfaces.htm" />
+    <Node Name="SetupDataExchange" DisplayName="Set Up Microsoft Dynamics NAV to Exchange Bank Data" Page="conDataExchangeSetup.htm" />
+    <Node Name="ManageDataEncryp" DisplayName="Manage Data Encryption" Page="ManageDataEncryption.htm" />
+    <Node Name="SetupBestPractices" DisplayName="Set Up Complex Application Areas Using Best Practices" Page="oriSetupBestPractices.htm" />
+  </Node>
+  <Node Name="Troubleshooting" DisplayName="Troubleshooting Using Microsoft Dynamics NAV" Page="conUsingNAV[1].htm">
+    <Node Name="TRBRecordLocked" DisplayName="Troubleshooting: Record Locked By Another User" Page="trbRecordLockedByAnotherUser.htm" />
+    <Node Name="TRBSortingActions" DisplayName="Troubleshooting: Sorting Actions in System Groups" Page="trbSortingActionsInSystemGroups.htm" />
+    <Node Name="TRBRemovingPromotedActions" DisplayName="Troubleshooting: Removing Promoted Actions in Home Tab" Page="trbRemovingPromotedActionsInHomeTab.htm" />
+    <Node Name="TRBCompressOptions" DisplayName="Troubleshooting: Compression Option in IIS" Page="trbCompressionOptionInIIS.htm" />
+    <Node Name="TRBFileTooLarge" DisplayName="Troubleshooting: The File that You Are Trying to Use Is Too Large" Page="trbFileThatYouAreTryingUseIsTooLarge.htm" />
+  </Node>
+  <Node Name="EnhanceBusProductivity" DisplayName="Enhancing Business Productivity with Microsoft Dynamics NAV" Page="oriEnhancingBusinessProductivityWithNAV.htm">
+    <Node Name="PaymentServicesForERP" DisplayName="Payment Services for Microsoft Dynamics ERP" Page="oriPaymentServicesForERP.htm" />
+    <Node Name="IntegratingWithOffice" DisplayName="Integrating with Microsoft Office" Page="oriIntegratingWithOffice.htm" />
+    <Node Name="IntegratingNAVWithCRM" DisplayName="Integrating Microsoft Dynamics NAV with Microsoft Dynamics CRM" Page="oriIntegratingNAVWithCRM.htm" />
+    <Node Name="SyncNAVWithOutlook" DisplayName="Synchronizing Microsoft Dynamics NAV with Outlook" Page="conSynchronizingNAVWithOutlook.htm" />
+    <Node Name="LogTrackEmailInteract" DisplayName="Logging and Tracking Email Interactions" Page="conLoggingTrackingEmailInteractions.htm" />
+  </Node>
+  <Node Name="Finance" DisplayName="Finance" Page="conFinance.htm">
+    <Node Name="ConfigureFinanceProcesses" DisplayName="Configure Finance Processes" Page="conConfigureFinanceProcesses.htm" />
+    <Node Name="WorkWithGeneralJournalse" DisplayName="Work with General Journals" Page="conWorkWithGeneralJournals.htm" />
+    <Node Name="ManageCash" DisplayName="Manage Cash" Page="conManageCash.htm" />
+    <Node Name="ManageReceivables" DisplayName="Manage Receivables" Page="conManageReceivables.htm" />
+    <Node Name="ManagePayables" DisplayName="Manage Payables" Page="conManagePayables.htm" />
+    <Node Name="ManageCostAccounting" DisplayName="Manage Cost Accounting" Page="conManageCostAccounting.htm" />
+    <Node Name="ManageCashFlowForecasts" DisplayName="Manage Cash Flow Forecasts" Page="conManageCashFlowForecasts.htm" />
+    <Node Name="ManageInventoryCosts" DisplayName="Manage Inventory Costs" Page="conManageInventoryCosts.htm" />
+    <Node Name="ManageIntercompanyTransactions" DisplayName="Manage Intercompany Transactions" Page="conManageIntercompanyTransactions.htm" />
+    <Node Name="ManageFixedAssets" DisplayName="Manage Fixed Assets" Page="conManageFixedAssets.htm" />
+    <Node Name="CloseYearsPeriods" DisplayName="Close Years and Periods" Page="conCloseYearsPeriods.htm" />
+  </Node>
+  <Node Name="BusIntell" DisplayName="Business Intelligence" Page="conBusinessIntelligence.htm">
+    <Node Name="AnalyzeActualAmountsBudgetAmounts" DisplayName="Analyze Actual Amounts and Budget Amounts" Page="conAnalyzeActualAmountsBudgetAmounts.htm" />
+    <Node Name="CreateSetUpAccountSchedules" DisplayName="Create and Set Up Account Schedules" Page="conCreateSetUpAccountSchedules.htm" />
+    <Node Name="SetupPublishKPI" DisplayName="How to: Set Up and Publish KPI Web Services Based on Account Schedules" Page="tskSetUpPublishKPIWebServicesBasedOnAccountSchedules.htm" />
+    <Node Name="AnalyzeDataByDimensions" DisplayName="Analyze Data by Dimensions" Page="conAnalyzeDataByDimensions.htm" />
+    <Node Name="CreateReportsWithXBRL" DisplayName="Create Reports with XBRL" Page="conCreateReportsWithXBRL.htm" />
+    <Node Name="CreateAnalysisViewsReports" DisplayName="Create Analysis Views and Reports" Page="conCreateAnalysisViewsReports.htm" />
+  </Node>
+  <Node Name="Marketing" DisplayName="Marketing" Page="conMarketing.htm">
+    <Node Name="ConfigureMarketingProcesses" DisplayName="Configure Marketing Processes" Page="conConfigureMarketingProcesses.htm" />
+    <Node Name="TablesMarketing" DisplayName="Marketing Tables" Page="conTables[21].htm" />
+  </Node>
+  <Node Name="Sales" DisplayName="Sales" Page="conSales.htm">
+    <Node Name="ConfigureSalesProcesses" DisplayName="Configure Sales Processes" Page="conConfigureSalesProcesses.htm" />
+    <Node Name="EstablishSalesForecasts" DisplayName="Establish Sales Forecasts" Page="conEstablishSalesForecasts.htm" />
+    <Node Name="SellGoods" DisplayName="Sell Goods" Page="conSellGoods.htm" />
+  </Node>
+  <Node Name="DesignEngineering" DisplayName="Design and Engineering" Page="conDesignEngineering.htm">
+    <Node Name="DesignProducts" DisplayName="Design a Product" Page="conDesignProducts.htm" />
+    <Node Name="DefineMaterialProcessStructure" DisplayName="Define Material and Process Structure" Page="conDefineMaterialProcessStructure.htm" />
+  </Node>
+  <Node Name="OpsPlanning" DisplayName="Operations Planning" Page="conOperationsPlanning.htm">
+    <Node Name="PlanResAvail" DisplayName="Plan for Resource Availability" Page="conPlanForResourceAvailability.htm" />
+    <Node Name="PerformMasterPlan" DisplayName="Perform Master Planning" Page="conPerformMasterPlanning.htm" />
+    <Node Name="PerformMatReqPlan" DisplayName="Perform Material Requirements Planning" Page="conPerformMaterialRequirementsPlanning.htm" />
+    <Node Name="ComProdOrders" DisplayName="Communicate Production Plans" Page="conCommunicateProductionPlans.htm" />
+  </Node>
+  <Node Name="Purchasing" DisplayName="Purchasing" Page="conPurchasing.htm">
+    <Node Name="ConfigurePurchaseProcesses" DisplayName="Configure Purchase Processes" Page="conConfigurePurchaseProcesses.htm" />
+    <Node Name="PurchaseGoods" DisplayName="Purchase Goods" Page="conPurchaseGoods.htm" />
+  </Node>
+  <Node Name="Receiving" DisplayName="Receiving" Page="conReceiving.htm">
+    <Node Name="ReceiveItems" DisplayName="How to: Receive Items" Page="tskReceiveItems.htm" />
+    <Node Name="ProcessPurchases" DisplayName="Processing Purchase Orders" Page="conProcessingPurchaseOrders.htm" />
+    <Node Name="CrossDock" DisplayName="How to: Cross-Dock Items" Page="tskCrossDockItems.htm" />
+  </Node>
+  <Node Name="WarehouseActivities" DisplayName="Warehouse Activitites" Page="conWarehouseActivities.htm">
+    <Node Name="ConfigureWarehouseProcesses" DisplayName="Configure Warehouse Processes" Page="conConfigureWarehouseProcesses.htm" />
+    <Node Name="PerformWarehouseActivities" DisplayName="Perform Warehouse Activities" Page="conPerformWarehouseActivities.htm" />
+  </Node>
+  <Node Name="Production" DisplayName="Production" Page="conProduction[2].htm">
+    <Node Name="ConfigProdProcess" DisplayName="Configure Production Processes" Page="conConfigureProductionProcesses.htm" />
+    <Node Name="SchedProdActivities" DisplayName="Schedule Production Activities" Page="conScheduleProductionActivities.htm" />
+    <Node Name="IssueMaterials" DisplayName="Issue Materials" Page="conIssueMaterials.htm" />
+    <Node Name="ExecuteProduction" DisplayName="Execute Production" Page="conExecuteProduction.htm" />
+  </Node>
+  <Node Name="Shipping" DisplayName="Shipping" Page="conShipping.htm">
+    <Node Name="PrepareShipments" DisplayName="How to: Prepare Shipments" Page="tskPrepareShipments.htm" />
+    <Node Name="ProcessSales" DisplayName="Processing Sales Orders" Page="conProcessingSalesOrders.htm" />
+    <Node Name="ShipTransfers" DisplayName="How to: Ship Transfer Orders" Page="tskShipTransferOrders.htm" />
+  </Node>
+  <Node Name="Service" DisplayName="Service" Page="conService.htm">
+    <Node Name="ConfigServices" DisplayName="Configure Service Processes" Page="conConfigureServiceProcesses.htm" />
+    <Node Name="PlanService" DisplayName="Plan Service" Page="conPlanService.htm" />
+    <Node Name="FulfillServContract" DisplayName="Fulfill Service Contracts" Page="conFulfillServiceContracts.htm" />
+    <Node Name="HandleCustInquir" DisplayName="Handle Customer Inquiries" Page="conHandleCustomerInquiries.htm" />
+    <Node Name="DeliverService" DisplayName="Deliver Service" Page="conDeliverService.htm" />
+  </Node>
+  <Node Name="ResourcePlanning" DisplayName="Resource Planning" Page="conResourcePlanning.htm">
+    <Node Name="PriceScheduleManageRes" DisplayName="Price, Schedule, and Manage Resources" Page="conPriceScheduleManageResources.htm" />
+    <Node Name="UseTimeSheets" DisplayName="Use Time Sheets" Page="conUseTimeSheets.htm" />
+  </Node>
+  <Node Name="Jobs" DisplayName="Jobs" Page="conJobs.htm">
+    <Node Name="SetUpJobs" DisplayName="Set Up Jobs" Page="conSetUpJobs.htm" />
+    <Node Name="ManageProjectBudgets" DisplayName="Manage Project Budgets" Page="conManageProjectBudgets.htm" />
+    <Node Name="MonProgressPerf" DisplayName="Monitor Progress and Performance" Page="conMonitorProgressPerformance.htm" />
+    <Node Name="ManProjectSupp" DisplayName="Manage Project Supplies" Page="conManageProjectSupplies.htm" />
+    <Node Name="InvoiceJobs" DisplayName="Invoice Jobs" Page="conInvoiceJobs.htm" />
+  </Node>
+  <Node Name="HumanResources" DisplayName="Human Resources" Page="conHumanResources[2].htm">
+    <Node Name="SetUpEmployees" DisplayName="Set Up Employees" Page="conSetUpEmployees.htm" />
+    <Node Name="AssignCodes" DisplayName="Assign Codes" Page="conAssignCodes.htm" />
+    <Node Name="RegisterAbsences" DisplayName="Register Absences" Page="conRegisterAbsences.htm" />
+  </Node>
+  <Node Name="DevItPro" DisplayName="Developer and IT Pro Help for Microsoft Dynamics NAV 2015" Page="conGettingStarted[1].htm">
+    <Node Name="ProductArch" DisplayName="Product Architecture" Page="conProductArchitecture.htm" />
+    <Node Name="Deployment" DisplayName="Deployment" Page="conDeployment[1].htm">
+      <Node Name="SysReq" DisplayName="System Requirements for Microsoft Dynamics NAV 2015" Page="oriNAV2015Requirements.htm" />
+      <Node Name="InstallationOptions" DisplayName="Installation Options" Page="oriInstallationOptions.htm" />
+    </Node>
+    <Node Name="Development" DisplayName="Development" Page="conDevelopment.htm">
+      <Node Name="CALProgramming" DisplayName="Programming in C/AL" Page="conProgrammingInCAL.htm" />
+      <Node Name="Objects" DisplayName="Objects" Page="conObjects.htm" />
+      <Node Name="WebServices" DisplayName="Web Services" Page="conWebServices[1].htm" />
+      <Node Name="ExtendingNAV" DisplayName="Extending Microsoft Dynamics NAV" Page="conExtendingNAV.htm" />
+      <Node Name="DevelopingForTablet" DisplayName="Developing for the Microsoft Dynamics NAV Tablet Client" Page="conDevelopingForNAVTabletClient.htm" />
+      <Node Name="Multilanguage" DisplayName="Multilanguage Development" Page="conMultilanguageDevelopment.htm" />
+      <Node Name="Accessibility" DisplayName="Accessibility" Page="conAccessibility.htm" />
+      <Node Name="TestingApp" DisplayName="Testing the Application" Page="conTestingApplication.htm" />
+      <Node Name="Debugging" DisplayName="Debugging" Page="conDebugging.htm" />
+    </Node>
+    <Node Name="Admin" DisplayName="Administration" Page="conAdministration.htm">
+      <Node Name="ConfiguringNAV" DisplayName="Configuring Microsoft Dynamics NAV" Page="conConfiguringNAV.htm" />
+      <Node Name="SrvAdminTool" DisplayName="Server Administration Tool" Page="conNAVServerAdministrationTool.htm" />
+      <Node Name="NAVPowerShellCmdlets" DisplayName="Windows PowerShell Cmdlets" Page="conNAVWindowsPowershellAPI.htm" />
+      <Node Name="DeployingNAVonAzure" DisplayName="Deploying and Managing Microsoft Dynamics NAV on Windows Azure" Page="conDeployingNAVOnWindowsAzure.htm" />
+    </Node>
+    <Node Name="Security" DisplayName="Security and Protection" Page="conSecurityProtection.htm">
+      <Node Name="SecurityOverview" DisplayName="Security Overview" Page="conOverviewSettingUpSecurity.htm" />
+    </Node>
+    <Node Name="TechRef" DisplayName="Technical Reference" Page="conTechnicalReference.htm">
+      <Node Name="CSIDERef" DisplayName="C/SIDE Reference Guide" Page="conCSIDEReferenceGuide.htm" />
+      <Node Name="DevEnvCmds" DisplayName="Development Environment Commands" Page="conDevelopmentEnvironmentCommands.htm" />
+      <Node Name="CSIDEwindows" DisplayName="Windows Overview" Page="conWindowOverviews.htm" />
+    </Node>
+    <Node Name="Upgrade" DisplayName="Upgrading to Microsoft Dynamics NAV 2015" Page="oriUpgradingToNAVCrete.htm">
+      <Node Name="MigratingToMultitenancy" DisplayName="Migrating to Multitenancy" Page="conMigratingTenantDatabases.htm" />
+    </Node>
+  </Node>
+</Node>

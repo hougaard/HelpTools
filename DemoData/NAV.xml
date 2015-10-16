@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Help>
+  <Contents>
+    <Content>
+      <ParentType> </ParentType>
+      <ParentID>0</ParentID>
+      <Type>Table</Type>
+      <ID>6030550</ID>
+      <Language>ENU</Language>
+      <Version>FF8.0b2</Version>
+      <Caption>Contract</Caption>
+      <Description>This is a demo text</Description>
+      <AdditionalInfo />
+      <Tasks />
+    </Content>
+    <Content>
+      <ParentType>Table</ParentType>
+      <ParentID>6030550</ParentID>
+      <Type>FieldNumber</Type>
+      <ID>503</ID>
+      <Language>ENU</Language>
+      <Version>FF8.0b2</Version>
+      <Caption>Exch. Rate Diff. Charge to</Caption>
+      <Description>The party responsible for charges related to exchange rate differences.</Description>
+      <AdditionalInfo />
+      <Tasks />
+    </Content>
+  </Contents>
+  <Articles>
+    <Article>
+      <Keyword>Demo</Keyword>
+      <Title>Demo</Title>
+      <Language />
+      <Version />
+      <ArticleText>Just an very important article.</ArticleText>
+    </Article>
+  </Articles>
+</Help>

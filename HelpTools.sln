@@ -9,6 +9,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpCmd", "HelpCmd\HelpCmd.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpGenerator", "HelpGenerator\HelpGenerator.csproj", "{97AEBE3B-C023-45FC-A776-78567403293F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DynamicsNAV", "DynamicsNAV", "{1A94B9FC-6939-4ACC-8332-93536E61D7DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DemoData", "DemoData", "{BF09B578-FB94-4DFF-98ED-4EB85FCFBE75}"
+	ProjectSection(SolutionItems) = preProject
+		DemoData\AppContent.xml = DemoData\AppContent.xml
+		DemoData\HelpPage.html = DemoData\HelpPage.html
+		DemoData\input-toc.xml = DemoData\input-toc.xml
+		DemoData\NAV.xml = DemoData\NAV.xml
+		DemoData\Structure.xml = DemoData\Structure.xml
+		DemoData\Template.xml = DemoData\Template.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
