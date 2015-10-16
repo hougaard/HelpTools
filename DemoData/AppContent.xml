@@ -5,28 +5,61 @@
       <ParentType> </ParentType>
       <ParentID>0</ParentID>
       <Type>Table</Type>
-      <ID>6030550</ID>
+      <ID>71000</ID>
       <Language>ENU</Language>
-      <Version>FF8.0b2</Version>
-      <Caption>Contract</Caption>
-      <Description>This is a demo text</Description>
+      <Version>HELP</Version>
+      <Caption>NAV Objects Help Text</Caption>
+      <Description>This is the table where all the content specific help is stored</Description>
+      <AdditionalInfo />
+      <Tasks />
+    </Content>
+    <Content>
+      <ParentType> </ParentType>
+      <ParentID>0</ParentID>
+      <Type>Table</Type>
+      <ID>71001</ID>
+      <Language>ENU</Language>
+      <Version>HELP</Version>
+      <Caption>Help Article</Caption>
+      <Description>This is the table where all the articles are stored. An article is a non content specific piece of help</Description>
       <AdditionalInfo />
       <Tasks />
     </Content>
     <Content>
       <ParentType>Table</ParentType>
-      <ParentID>6030550</ParentID>
+      <ParentID>71000</ParentID>
       <Type>FieldNumber</Type>
-      <ID>503</ID>
+      <ID>9</ID>
       <Language>ENU</Language>
-      <Version>FF8.0b2</Version>
-      <Caption>Exch. Rate Diff. Charge to</Caption>
-      <Description>The party responsible for charges related to exchange rate differences.</Description>
+      <Version>HELP</Version>
+      <Caption>Caption</Caption>
+      <Description>Captions is the title of the object in the selected language</Description>
       <AdditionalInfo />
       <Tasks />
     </Content>
   </Contents>
   <Articles>
+    <Article>
+      <Keyword>Introduction</Keyword>
+      <Title>Introduction to help</Title>
+      <Language />
+      <Version />
+      <ArticleText>How ironic is it, that a system about help, does not have help ?</ArticleText>
+    </Article>
+    <Article>
+      <Keyword>chapter1intro</Keyword>
+      <Title>Introduction to the first chapter</Title>
+      <Language />
+      <Version />
+      <ArticleText>It is very important that book starts a good way, and chapter one a good place to start.</ArticleText>
+    </Article>
+    <Article>
+      <Keyword>chapter2intro</Keyword>
+      <Title>Then it becomes difficult</Title>
+      <Language />
+      <Version />
+      <ArticleText>What do you write in the next chaper, well its hard, eh?</ArticleText>
+    </Article>
     <Article>
       <Keyword>Demo</Keyword>
       <Title>Demo</Title>
@@ -34,5 +67,6 @@
       <Version />
       <ArticleText>Just an very important article.</ArticleText>
     </Article>
+    chapter1intro
   </Articles>
 </Help>

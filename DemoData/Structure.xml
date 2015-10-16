@@ -9,7 +9,7 @@
     <Chapter No="1" Title="The First Chapter">
       <Preface Type="Article" ID="chapter1intro" />
       <Topics>
-        <Topic Type="Table" ID="18">
+        <Topic Type="Table" ID="71000">
           <SubTopics>
             <SubTopic Type="Table" ID="21" />
           </SubTopics>            
@@ -19,7 +19,7 @@
     <Chapter No="2" Title="A chapter to far..">
       <Preface Type="Article" ID="charpter2intro" />
       <Topics>
-        <Topic Type="Table" ID="24" />
+        <Topic Type="Table" ID="71001" />
       </Topics>
     </Chapter>
   </Chapters>
