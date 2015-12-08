@@ -129,7 +129,7 @@ namespace HelpTools
                 StringBuilder FieldPage = new StringBuilder(File.ReadAllText(Configuration.Parms.helppage_html));
                 FieldPage.Replace("$1$", field.Caption);
                 FieldPage.Replace("$1$", field.Caption);
-                FieldPage.Replace("$2$", field.Description);
+                FieldPage.Replace("$2$", ConvertMarkdown(field.Description,"html"));
                 File.WriteAllText(Configuration.Parms.output_path_helpserver + @"\" +
                 "T_" + table.ID + "_" + field.ID + ".htm", FieldPage.ToString());
             }
